@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lawyers",
+  "info": {
+    "singularName": "lawyer",
+    "pluralName": "lawyers",
+    "displayName": "Lawyer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "prime": {
+      "type": "boolean"
+    },
+    "school_number": {
+      "type": "string"
+    },
+    "municipalities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::municipalitie.municipalitie"
+    },
+    "specialties": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::specialty.specialty",
+      "inversedBy": "lawyers"
+    },
+    "experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experience.experience",
+      "mappedBy": "lawyer"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    }
+  }
+}

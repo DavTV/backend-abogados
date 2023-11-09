@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departaments",
+  "info": {
+    "singularName": "departament",
+    "pluralName": "departaments",
+    "displayName": "departament",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "coordinate": {
+      "type": "string"
+    },
+    "municipalities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::municipalitie.municipalitie",
+      "mappedBy": "departament"
+    }
+  }
+}

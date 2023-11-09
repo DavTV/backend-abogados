@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "municipalities",
+  "info": {
+    "singularName": "municipalitie",
+    "pluralName": "municipalities",
+    "displayName": "municipalitie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "coordinate": {
+      "type": "string"
+    },
+    "departament": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::departament.departament",
+      "inversedBy": "municipalities"
+    }
+  }
+}
